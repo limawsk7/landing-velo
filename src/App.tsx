@@ -78,7 +78,7 @@ function DashboardMockup() {
             alt="Captura da página inicial real da Fornece Cloud"
             loading="lazy"
           />
-        </div>  </div>
+        </div>
       </div>
       <div className="laptop-base"><div /></div>
     </div>
