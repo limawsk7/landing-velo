@@ -74,7 +74,7 @@ function DashboardMockup() {
       <div className="screen">
         <div className="app-window real-app-preview">
           <img
-            src="https://image.thum.io/get/width/1440/crop/850/noanimate/https://velo-web-production-10c44cdf.up.railway.app/"
+            src="/dashboard-preview.svg"
             alt="Captura da página inicial real da Fornece Cloud"
             loading="lazy"
           />
