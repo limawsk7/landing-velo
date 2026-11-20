@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Checkout from './Checkout';
 import {
   ArrowRight, ArrowUpRight, Check, ChevronDown, Cloud, Menu, X,
   Package, Boxes, Sparkles, RefreshCw, BarChart3, Store, Zap,
@@ -9,7 +8,7 @@ import {
 
 const plans = [
   {
-    name: 'Base', price: '97', period: '15 dias de acesso', description: 'Para começar a organizar e acelerar suas publicações.',
+    name: 'Base', price: '97', period: '15 dias de acesso', checkoutUrl: 'https://pay.cakto.com.br/oabgdnk_1351125', description: 'Para começar a organizar e acelerar suas publicações.',
     features: [
       'Até 50 anúncios ativos no Mercado Livre',
       '50 publicações durante o período',
@@ -23,7 +22,7 @@ const plans = [
     cta: 'Começar com o Base'
   },
   {
-    name: 'Pro', price: '149,90', period: '30 dias de acesso', description: 'Mais capacidade, automação e ferramentas para crescer.',
+    name: 'Pro', price: '149,90', period: '30 dias de acesso', checkoutUrl: 'https://pay.cakto.com.br/r47vavz_1351136', description: 'Mais capacidade, automação e ferramentas para crescer.',
     featured: true,
     features: [
       'Até 300 anúncios ativos no Mercado Livre',
@@ -40,7 +39,7 @@ const plans = [
     cta: 'Escolher o Pro'
   },
   {
-    name: 'Business', price: '297', period: 'Pagamento único · vitalício', description: 'A experiência completa, com acesso sem mensalidade.',
+    name: 'Business', price: '297', period: 'Pagamento único · vitalício', checkoutUrl: 'https://pay.cakto.com.br/vjpj8kx_1351009', description: 'A experiência completa, com acesso sem mensalidade.',
     lifetime: true,
     features: [
       'Anúncios ilimitados no Mercado Livre',
@@ -98,7 +97,6 @@ function DashboardMockup() {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const closeMenu = () => setMenuOpen(false);
 
   return <div className="site-shell">
@@ -157,8 +155,8 @@ function App() {
           {plan.featured && <div className="popular-tag">MAIS ESCOLHIDO</div>}
           {plan.lifetime && <div className="lifetime-tag"><Sparkles size={13}/> ACESSO VITALÍCIO</div>}
           <div className="plan-name">{plan.name}</div><p className="plan-description">{plan.description}</p>
-          <div className="price"><span>R$</span>{plan.price}<small>{plan.period}</small></div>
-          <button type="button" className={'button plan-button'+(plan.featured?' button-primary':'')} onClick={() => plan.name === 'Business' ? window.open('https://pay.cakto.com.br/vjpj8kx_1351009', '_blank', 'noopener,noreferrer') : setSelectedPlan(plan.name.toLowerCase())}>{plan.cta} <ArrowRight size={16}/></button>
+          {plan.lifetime ? <div className="price price-business"><div className="installment-price">12x <strong>R$ 24,75</strong></div><small>ou R$ 297,00 no Pix · vitalício</small></div> : <div className="price"><span>R$</span>{plan.price}<small>{plan.period}</small></div>}
+          <button type="button" className={'button plan-button'+(plan.featured?' button-primary':'')} onClick={() => window.open(plan.checkoutUrl, '_blank', 'noopener,noreferrer')}>{plan.cta} <ArrowRight size={16}/></button>
           <div className="feature-divider"/><div className="included-label">O QUE ESTÁ INCLUÍDO</div>
           <ul>{plan.features.map((feature)=><li key={feature}><Check size={15}/><span>{feature}</span></li>)}</ul>
         </article>)}</div>
@@ -170,7 +168,6 @@ function App() {
       <section className="section-wrap faq-section" id="faq"><div className="faq-intro"><div className="eyebrow">AINDA TEM DÚVIDAS?</div><h2>Respostas para<br/><span>começar tranquilo.</span></h2><p>Separamos algumas informações para ajudar você a conhecer a plataforma.</p></div><div className="faq-list">{faqs.map(([q,a],i)=><div className={'faq-item'+(openFaq===i?' faq-open':'')} key={q}><button onClick={()=>setOpenFaq(openFaq===i?null:i)}><span>{q}</span><ChevronDown size={18}/></button>{openFaq===i&&<p>{a}</p>}</div>)}</div></section>
     </main>
 
-    {selectedPlan && <Checkout plan={selectedPlan} onClose={() => setSelectedPlan(null)} />}
 
     <footer className="footer"><div className="section-wrap footer-inner"><a className="brand" href="#inicio"><span className="brand-mark"><Cloud size={20}/></span><span>fornece<span className="brand-blue">cloud</span></span></a><span>Organize. Publique. Cresça.</span><span>© {new Date().getFullYear()} Fornece Cloud. Todos os direitos reservados.</span></div></footer>
   </div>;
