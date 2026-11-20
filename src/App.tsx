@@ -73,13 +73,12 @@ function DashboardMockup() {
     <div className="laptop">
       <div className="screen">
         <div className="app-window real-app-preview">
-          <iframe
-            src="https://velo-web-production-10c44cdf.up.railway.app/"
-            title="Página inicial real da Fornece Cloud"
+          <img
+            src="https://image.thum.io/get/width/1440/crop/850/noanimate/https://velo-web-production-10c44cdf.up.railway.app/"
+            alt="Captura da página inicial real da Fornece Cloud"
             loading="lazy"
-            referrerPolicy="strict-origin-when-cross-origin"
           />
-        </div>
+        </div>  </div>
       </div>
       <div className="laptop-base"><div /></div>
     </div>
