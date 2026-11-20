@@ -20,3 +20,6 @@
 /* Prévia real da página inicial da plataforma dentro do notebook */
 .real-app-preview{position:relative;display:block;width:100%;height:340px;overflow:hidden;background:#080d16}
 .real-app-preview img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+
+
+.price-business{display:block;letter-spacing:0}.price-business .installment-price{font:600 19px Manrope;letter-spacing:-.3px;color:#a9ceff}.price-business .installment-price strong{font:800 38px Manrope;letter-spacing:-1.8px;color:#f3f7ff;margin-left:4px}.price-business>small{display:block;margin:5px 0 0 2px;font:500 10px 'DM Sans';color:#8798b2;letter-spacing:0}@media(max-width:680px){.price-business .installment-price{font-size:17px}.price-business .installment-price strong{font-size:35px}}
