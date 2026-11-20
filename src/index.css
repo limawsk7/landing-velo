@@ -23,3 +23,19 @@
 
 
 .price-business{display:block;letter-spacing:0}.price-business .installment-price{font:600 19px Manrope;letter-spacing:-.3px;color:#a9ceff}.price-business .installment-price strong{font:800 38px Manrope;letter-spacing:-1.8px;color:#f3f7ff;margin-left:4px}.price-business>small{display:block;margin:5px 0 0 2px;font:500 10px 'DM Sans';color:#8798b2;letter-spacing:0}@media(max-width:680px){.price-business .installment-price{font-size:17px}.price-business .installment-price strong{font-size:35px}}
+
+
+/* Apresentação dos preços e parcelas conforme os checkouts Cakto */
+.price-installment{display:block;letter-spacing:0}
+.price-installment .installment-price{font:600 19px Manrope;letter-spacing:-.3px;color:#a9ceff}
+.price-installment .installment-price strong{font:800 38px Manrope;letter-spacing:-1.8px;color:#f3f7ff;margin-left:4px}
+.price-installment>small{display:block;margin:5px 0 0 2px;font:500 10px 'DM Sans';color:#8798b2;letter-spacing:0}
+.price-business .installment-price strong{content:"";font-size:38px}
+.price-base{display:block;letter-spacing:0}
+.price-base .base-main{font:800 38px Manrope;letter-spacing:-1.8px;color:#f3f7ff}
+.price-base .base-main span{font:600 19px Manrope;color:#a9ceff;margin-right:5px;vertical-align:middle}
+.price-base>small{display:block;margin:5px 0 0 2px;font:500 10px 'DM Sans';color:#8798b2;letter-spacing:0}
+@media(max-width:680px){
+ .price-installment .installment-price{font-size:17px}
+ .price-installment .installment-price strong,.price-business .installment-price strong,.price-base .base-main{font-size:35px}
+}
