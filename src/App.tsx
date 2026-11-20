@@ -72,29 +72,13 @@ function DashboardMockup() {
     <div className="glow-orb" />
     <div className="laptop">
       <div className="screen">
-        <div className="app-window">
-          <aside className="mock-sidebar">
-            <div className="mock-brand"><span className="brand-mark small"><Cloud size={15}/></span><b>fornece<span>cloud</span></b></div>
-            <div className="mock-nav active"><Layers3 size={13}/> Visão geral</div>
-            <div className="mock-nav"><Package size={13}/> Produtos</div>
-            <div className="mock-nav"><ShoppingBag size={13}/> Anúncios</div>
-            <div className="mock-nav"><Boxes size={13}/> Pedidos</div>
-            <div className="mock-nav"><BarChart3 size={13}/> Relatórios</div>
-            <div className="mock-profile"><span className="avatar">FC</span><span><b>Minha loja</b><small>Plano Business</small></span></div>
-          </aside>
-          <main className="mock-main">
-            <div className="mock-top"><span>Visão geral</span><span className="mock-date">Últimos 30 dias　⌄</span></div>
-            <div className="mock-welcome"><div><small>QUINTA-FEIRA, 20 DE NOVEMBRO</small><h3>Bom dia! 👋</h3><p>Acompanhe o desempenho da sua operação.</p></div><span className="live-dot">● Tudo atualizado</span></div>
-            <div className="stat-grid">
-              <div className="stat-card"><small>Produtos no catálogo</small><strong>1.284</strong><em>↗ 12,8%</em></div>
-              <div className="stat-card"><small>Anúncios publicados</small><strong>348</strong><em>↗ 8,4%</em></div>
-              <div className="stat-card"><small>Pedidos no período</small><strong>126</strong><em>↗ 18,2%</em></div>
-            </div>
-            <div className="mock-bottom">
-              <div className="chart-card"><div className="chart-heading"><b>Desempenho</b><small>Publicações recentes</small></div><div className="chart"><div className="chart-bars">{[32,48,39,66,51,76,61,88,68,96,75,84].map((h,i)=><i key={i} style={{height:h+'%'}} />)}</div></div><div className="chart-labels"><span>01 NOV</span><span>10 NOV</span><span>20 NOV</span><span>30 NOV</span></div></div>
-              <div className="activity-card"><b>Atividade recente</b><div className="activity-row"><span className="activity-icon"><Package size={12}/></span><span><b>Produto importado</b><small>Há 2 minutos</small></span><Check size={13}/></div><div className="activity-row"><span className="activity-icon"><Zap size={12}/></span><span><b>Anúncio publicado</b><small>Há 18 minutos</small></span><Check size={13}/></div><div className="activity-row"><span className="activity-icon"><RefreshCw size={12}/></span><span><b>Estoque sincronizado</b><small>Há 35 minutos</small></span><Check size={13}/></div></div>
-            </div>
-          </main>
+        <div className="app-window real-app-preview">
+          <iframe
+            src="https://velo-web-production-10c44cdf.up.railway.app/"
+            title="Página inicial real da Fornece Cloud"
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
         </div>
       </div>
       <div className="laptop-base"><div /></div>
