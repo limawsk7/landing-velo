@@ -158,7 +158,7 @@ function App() {
           {plan.lifetime && <div className="lifetime-tag"><Sparkles size={13}/> ACESSO VITALÍCIO</div>}
           <div className="plan-name">{plan.name}</div><p className="plan-description">{plan.description}</p>
           <div className="price"><span>R$</span>{plan.price}<small>{plan.period}</small></div>
-          <button type="button" className={'button plan-button'+(plan.featured?' button-primary':'')} onClick={() => setSelectedPlan(plan.name.toLowerCase())}>{plan.cta} <ArrowRight size={16}/></button>
+          <button type="button" className={'button plan-button'+(plan.featured?' button-primary':'')} onClick={() => plan.name === 'Business' ? window.open('https://pay.cakto.com.br/vjpj8kx_1351009', '_blank', 'noopener,noreferrer') : setSelectedPlan(plan.name.toLowerCase())}>{plan.cta} <ArrowRight size={16}/></button>
           <div className="feature-divider"/><div className="included-label">O QUE ESTÁ INCLUÍDO</div>
           <ul>{plan.features.map((feature)=><li key={feature}><Check size={15}/><span>{feature}</span></li>)}</ul>
         </article>)}</div>
