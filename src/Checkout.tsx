@@ -5,7 +5,7 @@ type Props = { plan: string; onClose: () => void };
 const API = 'https://bcpybjmxlxfahbbbuwrl.supabase.co/functions/v1/fornece-checkout';
 
 const labels: Record<string,string> = { base: 'Base', pro: 'Pro', business: 'Business' };
-const prices: Record<string,string> = { base: 'R$ 97,00', pro: 'R$ 149,00', business: 'R$ 297,00' };
+const prices: Record<string,string> = { base: 'R$ 97,00', pro: 'R$ 149,90', business: 'R$ 297,00' };
 
 export default function Checkout({ plan, onClose }: Props) {
   const [email,setEmail] = useState('');
