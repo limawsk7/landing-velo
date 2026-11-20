@@ -155,7 +155,7 @@ function App() {
           {plan.featured && <div className="popular-tag">MAIS ESCOLHIDO</div>}
           {plan.lifetime && <div className="lifetime-tag"><Sparkles size={13}/> ACESSO VITALÍCIO</div>}
           <div className="plan-name">{plan.name}</div><p className="plan-description">{plan.description}</p>
-          {plan.lifetime ? <div className="price price-business"><div className="installment-price">12x <strong>R$ 24,75</strong></div><small>ou R$ 297,00 no Pix · vitalício</small></div> : <div className="price"><span>R$</span>{plan.price}<small>{plan.period}</small></div>}
+          {plan.lifetime ? <div className="price price-business"><div className="installment-price">12x <strong>R$ 30,76</strong></div><small>ou R$ 297,00 no Pix · vitalício</small></div> : plan.name === 'Pro' ? <div className="price price-installment"><div className="installment-price">12x <strong>R$ 15,57</strong></div><small>30 dias de acesso</small></div> : <div className="price price-base"><div className="base-main"><span>R$</span>97</div><small>ou 12x de R$ 10,10 · 15 dias de acesso</small></div>}
           <button type="button" className={'button plan-button'+(plan.featured?' button-primary':'')} onClick={() => window.open(plan.checkoutUrl, '_blank', 'noopener,noreferrer')}>{plan.cta} <ArrowRight size={16}/></button>
           <div className="feature-divider"/><div className="included-label">O QUE ESTÁ INCLUÍDO</div>
           <ul>{plan.features.map((feature)=><li key={feature}><Check size={15}/><span>{feature}</span></li>)}</ul>
