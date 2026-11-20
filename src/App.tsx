@@ -74,8 +74,8 @@ function DashboardMockup() {
       <div className="screen">
         <div className="app-window real-app-preview">
           <img
-            src="/dashboard-preview.svg"
-            alt="Captura da página inicial real da Fornece Cloud"
+            src="https://cdn.phototourl.com/anon/2026-11-20-35fb120c-147c-48b5-b940-277d52e05501.png"
+            alt="Imagem enviada para a prévia da Fornece Cloud"
             loading="lazy"
           />
         </div>
