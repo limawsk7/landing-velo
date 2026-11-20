@@ -22,7 +22,20 @@ export default function Checkout({ plan, onClose }: Props) {
         body:JSON.stringify({ email, plan })
       });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || 'Não foi possível gerar o Pix agora.');
+      if (!response.ok) {
+        const detail = data.detail;
+        const detailText = typeof detail === 'string'
+          ? detail
+          : detail && typeof detail === 'object'
+            ? [
+                detail.message,
+                detail.error,
+                detail.errors ? JSON.stringify(detail.errors) : '',
+                detail.status ? `HTTP ${detail.status}` : '',
+              ].filter(Boolean).join(' — ')
+            : '';
+        throw new Error([data.error || 'Não foi possível gerar o Pix agora.', detailText].filter(Boolean).join(' Detalhe: '));
+      }
       setPayment(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro inesperado ao gerar o Pix.');
