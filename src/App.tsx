@@ -23,7 +23,7 @@ const plans = [
     cta: 'Começar com o Base'
   },
   {
-    name: 'Pro', price: '197', period: '30 dias de acesso', description: 'Mais capacidade, automação e ferramentas para crescer.',
+    name: 'Pro', price: '149', period: '30 dias de acesso', description: 'Mais capacidade, automação e ferramentas para crescer.',
     featured: true,
     features: [
       'Até 300 anúncios ativos no Mercado Livre',
